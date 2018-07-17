@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Movie Preferences</title>
+    </h:head>
+    <h:body>
+         <h:form>
+            <h:graphicImage url="#{resource['images:movienight.jpeg']}" 
+                            alt="Movie Night"/>
+            <h2>Welcome to My Movie Survey!</h2>
+            <h2>Please Enter Your Name:</h2>
+            <h:inputText id="username"
+                         title="My name is: "
+                         value="#{movies.name}"
+                         required="true"
+                         requiredMessage="Error: A name is required."
+                         maxlength="25" />
+            <br></br>
+            <br></br>
+            <h>How many movies do you own?</h>
+            <br></br>
+            <h:selectOneRadio id="movieRange"
+                              value="#{movies.numberOfMovies}">
+                <f:selectItem itemValue="0-10"
+                              itemLabel="0-10"/>
+                <f:selectItem itemValue="11-20"
+                              itemLabel="11-20"/>
+                <f:selectItem itemValue="21-30"
+                              itemLabel="21-30"/>
+                <f:selectItem itemValue="31-40"
+                              itemLabel="31-40"/>
+                <f:selectItem itemValue="41-50"
+                              itemLabel="41-50"/>
+                <f:selectItem itemValue="Over 50"
+                              itemLabel="Over 50"/>
+            </h:selectOneRadio>
+            <br></br>
+            <br></br>
+            <h>What kind of genres do you like?</h> 
+           <h:selectManyCheckbox value = "#{movies.genres}">
+            <f:selectItem itemValue = "Comedy" itemLabel = "Comedy" />
+            <f:selectItem itemValue = "Action" itemLabel = "Action" />
+            <f:selectItem itemValue = "Thriller" itemLabel = "Thriller" />
+            <f:selectItem itemValue = "Drama" itemLabel = "Drama" />
+            <f:selectItem itemValue = "Romance" itemLabel = "Romance" />
+         </h:selectManyCheckbox>
+              <br></br>
+            <br></br>
+            <h>What is your favorite genre?</h>
+            <br></br>
+            <br></br>
+             <h:selectOneListbox id="movieGenre"
+                              value="#{movies.genre}">
+                <f:selectItem itemValue="Comedy"
+                              itemLabel="Comedy"/>
+                <f:selectItem itemValue="Action"
+                              itemLabel="Action"/>
+                <f:selectItem itemValue="Thriller"
+                              itemLabel="Thriller"/>
+                <f:selectItem itemValue="Drama"
+                              itemLabel="Drama"/>
+                <f:selectItem itemValue="Romance"
+                              itemLabel="Romace"/>
+             </h:selectOneListbox>
+            
+            
+          
+            <p></p>
+            <h:commandButton id="submit" value="Submit" action="response" />
+            <h:commandButton id="reset" value="Reset" type="reset" />
+        </h:form>
+        <div class="messagecolor">
+            <h:messages showSummary="true" 
+                        showDetail="false"
+                        errorStyle="color: #d20005" 
+                        infoStyle="color: blue"/>
+        </div>
+    </h:body>
+</html>
+

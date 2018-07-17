@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Survey</title>
+    </h:head>
+    <h:body>
+    <h2>Survey Data</h2>
+    <p>
+      Select your Survey ID number to see entered data:
+    </p>
+    <h:form>
+      <h:selectOneListbox value="#{query.id}">
+        <f:selectItems value="#{database.surveyList}"/>
+      </h:selectOneListbox>
+      <p>
+        <h:commandButton value="Find Survey" action="#{query.surveyListAction()}"/>
+      </p>
+    </h:form>
+  </h:body>
+
+</html>
+

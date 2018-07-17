@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Project 5</title>
+    </h:head>
+    <h:body style="background-color:pink;">
+        <center>
+        <h:form>
+            <h:graphicImage url="#{resource['images:pencil.png']}"
+                            height="200"
+                            width="200"
+                            alt="Pencil pic"/>
+            <h1>Edit Survey Data</h1>
+            Enter Last Name : <h:inputText value="#{editcategory.category_name}"></h:inputText><br></br>
+           First Name : <h:inputText value="#{editcategory.firstname}"></h:inputText><br></br>
+           Age : <h:inputText value="#{editcategory.age}"></h:inputText><br></br>
+           Occupation : <h:inputText value="#{editcategory.occupation}"></h:inputText><br></br>
+           Children : <h:inputText value="#{editcategory.children}"></h:inputText><br></br>
+           Married : <h:inputText value="#{editcategory.married}"></h:inputText><br></br>
+           Registered As (Party Affiliation): <h:inputText value="#{editcategory.registeredAs}"></h:inputText><br></br>
+    <h:commandButton value="Update" action="#{editcategory.update_category}">
+     <f:param name="update_id" value="#{editcategory.id}" />
+    </h:commandButton>
+   </h:form>
+  </center>
+</h:body>
+</html>
+

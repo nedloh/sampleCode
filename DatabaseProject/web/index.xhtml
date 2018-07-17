@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Project 5</title>
+    </h:head>
+    <h:body style="background-color:pink;">
+        <center>
+            <h1>Survey List</h1>
+            <h:form>
+                Enter New ID: <h:inputText value="#{category.id}"></h:inputText> 
+                <h:commandButton value="Add" action="#{category.add_id}"> </h:commandButton>
+                <br></br>
+                <br></br>
+            </h:form>
+            <h:form>
+            <h:dataTable value="#{category.get_all_category}" var="cat">
+                <h:column>
+                    <f:facet name="header">ID NO.</f:facet>
+                    <h:outputText value="#{cat.id}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Last Name</f:facet>
+                    <h:outputText value="#{cat.category_name}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">First Name</f:facet>
+                    <h:outputText value="#{cat.firstname}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Age</f:facet>
+                    <h:outputText value="#{cat.age}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Occupation</f:facet>
+                    <h:outputText value="#{cat.occupation}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Children</f:facet>
+                    <h:outputText value="#{cat.children}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Married</f:facet>
+                    <h:outputText value="#{cat.married}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Registered As</f:facet>
+                    <h:outputText value="#{cat.registeredAs}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Edit</f:facet>
+                    <h:commandButton value="Edit" action="#{category.edit_Category}">
+                    <f:param name="action" value="#{cat.id}" />
+                    </h:commandButton>
+                </h:column>
+                <h:column>
+      <f:facet name="header">Delete</f:facet>
+      <h:commandButton value="Delete" action="#{category.delete_Category}">
+        <f:param name="action" value="#{cat.id}" />
+      </h:commandButton>
+    </h:column>
+            </h:dataTable>
+                 <h:graphicImage url="#{resource['images:survey.png']}"
+                            height="275"
+                            width="350"
+                            alt="Survey pic"/>
+                 
+                </h:form>
+             <h2>Search Surveys</h2>
+            <h:form>
+                Enter Last name: <h:inputText value="#{category.category_name}"></h:inputText> 
+                Enter First name: <h:inputText value="#{category.firstname}"></h:inputText> 
+                <h:commandButton value="Search" action="#{category.search}"> </h:commandButton>
+                <br></br>
+                <br></br>
+                </h:form>
+             <h:form>
+            <h:dataTable value="#{category.searchlist}" var="search">
+                <h:column>
+                    <f:facet name="header">ID NO.</f:facet>
+                    <h:outputText value="#{search.id}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Last Name</f:facet>
+                    <h:outputText value="#{search.category_name}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">First Name</f:facet>
+                    <h:outputText value="#{search.firstname}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Age</f:facet>
+                    <h:outputText value="#{search.age}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Occupation</f:facet>
+                    <h:outputText value="#{search.occupation}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Children</f:facet>
+                    <h:outputText value="#{search.children}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Married</f:facet>
+                    <h:outputText value="#{search.married}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Registered As</f:facet>
+                    <h:outputText value="#{search.registeredAs}"></h:outputText>
+                </h:column>
+             
+            </h:dataTable>
+                </h:form>
+        </center>
+    </h:body>
+</html>
+
